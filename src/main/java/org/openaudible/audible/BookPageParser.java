@@ -29,7 +29,6 @@ public enum BookPageParser {
 			if (start == -1) break;
 			int end = html.indexOf(endTag, ch);
 			assert (end != -1);
-			if (end == -1) break;
 			String cdata = html.substring(start + startTag.length(), end).trim();
 			list.add(cdata);
 			ch = end + endTag.length();
