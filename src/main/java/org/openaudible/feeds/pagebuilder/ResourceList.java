@@ -77,6 +77,7 @@ public class ResourceList {
 			final Pattern pattern) {
 		final ArrayList<String> retval = new ArrayList<>();
 		final File[] fileList = directory.listFiles();
+        assert(fileList != null);
 		for (final File file : fileList) {
 			if (file.isDirectory()) {
 				retval.addAll(getResourcesFromDirectory(file, pattern));
