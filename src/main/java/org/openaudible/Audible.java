@@ -302,6 +302,7 @@ public class Audible implements IQueueListener<Book> {
 	public HashSet<File> getFileSet(Directories dir) {
 		HashSet<File> set = new HashSet<>();
 		File d = dir.getDir();
+        assert(d != null);
 		for (File f : d.listFiles()) {
 			String name = f.getName();
 			if (name.startsWith("."))
