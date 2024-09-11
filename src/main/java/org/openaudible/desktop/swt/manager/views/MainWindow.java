@@ -38,15 +38,9 @@ public class MainWindow extends GridComposite {
 		// c.debugLayout(SWT.COLOR_DARK_MAGENTA);
 		
 		// Row 1, search bar and button bar.
-		if (useToolbar) {
-			row = new GridComposite(c, SWT.BORDER_DOT, useToolbar ? 2 : 1, false, GridData.FILL_HORIZONTAL | GridData.VERTICAL_ALIGN_BEGINNING);
-			searchField = new SearchField(row, 180, GridData.HORIZONTAL_ALIGN_BEGINNING | GridData.VERTICAL_ALIGN_BEGINNING);
-			BookButtonBar b = new BookButtonBar(row, GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_END | GridData.VERTICAL_ALIGN_BEGINNING);
-		} else {
-			row = new GridComposite(c, SWT.BORDER_DOT, 1, false, GridData.FILL_HORIZONTAL | GridData.VERTICAL_ALIGN_BEGINNING);
-			row.noMargins();
-			searchField = new SearchField(row, 120, GridData.HORIZONTAL_ALIGN_BEGINNING | GridData.VERTICAL_ALIGN_BEGINNING);
-		}
+        row = new GridComposite(c, SWT.BORDER_DOT, useToolbar ? 2 : 1, false, GridData.FILL_HORIZONTAL | GridData.VERTICAL_ALIGN_BEGINNING);
+        searchField = new SearchField(row, 180, GridData.HORIZONTAL_ALIGN_BEGINNING | GridData.VERTICAL_ALIGN_BEGINNING);
+        BookButtonBar b = new BookButtonBar(row, GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_END | GridData.VERTICAL_ALIGN_BEGINNING);
 		
 		// Row 2. Status and selected book
 		{
