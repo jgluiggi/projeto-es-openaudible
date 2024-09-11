@@ -83,6 +83,12 @@ public class SingleColumnData implements SuperTableData<Comparable> {
 	public Comparable getObject() {
 		return data;
 	}
+
+	@Override
+	public int hashCode() {
+        assert false;
+		return 42;
+	}
 	
 	public String getString() {
 		Comparable c = getObject();
