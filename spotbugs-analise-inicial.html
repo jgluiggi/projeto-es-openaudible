@@ -1,0 +1,824 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.8.6</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/home/jgluiggi/openaudible/target</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>0 lines of code analyzed,
+	in 0 classes, 
+	in 12 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">6</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">20</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Low Priority Warnings</td>
+            <td align="right">3</td>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>29</b>
+            </td>
+            <td align="right">
+               <b>0.00</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+            </td>
+            <td align="right">11</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_EXPERIMENTAL">Experimental Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+            </td>
+            <td align="right">6</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">9</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>29</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e239');">
+            <td>
+               <span class="priority-1">HE</span>
+            </td>
+            <td>org.openaudible.desktop.swt.gui.tables.SingleColumnData defines equals and uses Object.hashCode()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e239" style="display: none;">
+                  <a href="#HE_EQUALS_USE_HASHCODE">Bug type HE_EQUALS_USE_HASHCODE (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.gui.tables.SingleColumnData<br/>In method org.openaudible.desktop.swt.gui.tables.SingleColumnData.equals(Object)<br/>At SingleColumnData.java:[lines 74-79]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e251');">
+            <td>
+               <span class="priority-3">IP</span>
+            </td>
+            <td>The parameter statusBar to org.openaudible.desktop.swt.manager.browser.AudibleBrowser.show(boolean, Point, Point, boolean, boolean, boolean, boolean) is dead upon entry but overwritten</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e251" style="display: none;">
+                  <a href="#IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN">Bug type IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.manager.browser.AudibleBrowser<br/>In method org.openaudible.desktop.swt.manager.browser.AudibleBrowser.show(boolean, Point, Point, boolean, boolean, boolean, boolean)<br/>Local variable named statusBar<br/>At AudibleBrowser.java:[line 250]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e188');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference of errStream in org.openaudible.convert.ConvertJob.createMP3() on exception path</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e188" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Bug type NP_NULL_ON_SOME_PATH_EXCEPTION (click for details)</a>
+                  <br/>In class org.openaudible.convert.ConvertJob<br/>In method org.openaudible.convert.ConvertJob.createMP3()<br/>Value loaded from errStream<br/>Dereferenced at ConvertJob.java:[line 213]<br/>Null value at ConvertJob.java:[line 169]<br/>Known null at ConvertJob.java:[line 175]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e361');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference of response in org.openaudible.download.DownloadJob.download() on exception path</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e361" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Bug type NP_NULL_ON_SOME_PATH_EXCEPTION (click for details)</a>
+                  <br/>In class org.openaudible.download.DownloadJob<br/>In method org.openaudible.download.DownloadJob.download()<br/>Value loaded from response<br/>Dereferenced at DownloadJob.java:[line 140]<br/>Null value at DownloadJob.java:[line 87]<br/>Known null at DownloadJob.java:[line 91]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e416');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference of eg in org.openaudible.util.SimpleProcess.run(OutputStream, OutputStream) on exception path</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e416" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Bug type NP_NULL_ON_SOME_PATH_EXCEPTION (click for details)</a>
+                  <br/>In class org.openaudible.util.SimpleProcess<br/>In method org.openaudible.util.SimpleProcess.run(OutputStream, OutputStream)<br/>Value loaded from eg<br/>Dereferenced at SimpleProcess.java:[line 60]<br/>Null value at SimpleProcess.java:[line 48]<br/>Known null at SimpleProcess.java:[line 51]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e437');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference of sg in org.openaudible.util.SimpleProcess.run(OutputStream, OutputStream) on exception path</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e437" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_EXCEPTION">Bug type NP_NULL_ON_SOME_PATH_EXCEPTION (click for details)</a>
+                  <br/>In class org.openaudible.util.SimpleProcess<br/>In method org.openaudible.util.SimpleProcess.run(OutputStream, OutputStream)<br/>Value loaded from sg<br/>Dereferenced at SimpleProcess.java:[line 59]<br/>Null value at SimpleProcess.java:[line 48]<br/>Known null at SimpleProcess.java:[line 51]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e20');">
+            <td>
+               <span class="priority-1">RCN</span>
+            </td>
+            <td>Nullcheck of task at line 920 of value previously dereferenced in org.openaudible.Audible.importAAX(File, IProgressTask)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e20" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+                  <br/>In class org.openaudible.Audible<br/>In method org.openaudible.Audible.importAAX(File, IProgressTask)<br/>Value loaded from task<br/>At Audible.java:[line 912]<br/>Redundant null check at Audible.java:[line 920]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e36');">
+            <td>
+               <span class="priority-2">RCN</span>
+            </td>
+            <td>Nullcheck of task at line 349 of value previously dereferenced in org.openaudible.Audible.findOrphanedFiles(IProgressTask)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e36" style="display: none;">
+                  <a href="#RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">Bug type RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE (click for details)</a>
+                  <br/>In class org.openaudible.Audible<br/>In method org.openaudible.Audible.findOrphanedFiles(IProgressTask)<br/>Value loaded from task<br/>At Audible.java:[line 342]<br/>Redundant null check at Audible.java:[line 349]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e176');">
+            <td>
+               <span class="priority-3">SIO</span>
+            </td>
+            <td>org.openaudible.convert.AAXParser.main(String[]) does an unnecessary type check using instanceof operator when it can be determined statically</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e176" style="display: none;">
+                  <a href="#SIO_SUPERFLUOUS_INSTANCEOF">Bug type SIO_SUPERFLUOUS_INSTANCEOF (click for details)</a>
+                  <br/>In class org.openaudible.convert.AAXParser<br/>In method org.openaudible.convert.AAXParser.main(String[])<br/>At AAXParser.java:[line 53]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-3">SIO</span>
+            </td>
+            <td>org.openaudible.util.TimeToSecondsTest.parseTime() does an unnecessary type check using instanceof operator when it can be determined statically</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#SIO_SUPERFLUOUS_INSTANCEOF">Bug type SIO_SUPERFLUOUS_INSTANCEOF (click for details)</a>
+                  <br/>In class org.openaudible.util.TimeToSecondsTest<br/>In method org.openaudible.util.TimeToSecondsTest.parseTime()<br/>At TimeToSecondsTest.java:[line 41]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e297');">
+            <td>
+               <span class="priority-2">USELESS_STRING</span>
+            </td>
+            <td>Invocation of toString on java.io.File.list() in org.openaudible.desktop.swt.util.shop.BuildInstaller.build()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e297" style="display: none;">
+                  <a href="#DMI_INVOKING_TOSTRING_ON_ARRAY">Bug type DMI_INVOKING_TOSTRING_ON_ARRAY (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.util.shop.BuildInstaller<br/>In method org.openaudible.desktop.swt.util.shop.BuildInstaller.build()<br/>Return value of java.io.File.list() of type String[]<br/>At BuildInstaller.java:[line 37]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e458');">
+            <td>
+               <span class="priority-2">UwF</span>
+            </td>
+            <td>Unwritten field: org.openaudible.util.StreamGobbler.exception</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e458" style="display: none;">
+                  <a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class org.openaudible.util.StreamGobbler<br/>Field org.openaudible.util.StreamGobbler.exception<br/>At StreamGobbler.java:[line 80]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_EXPERIMENTAL">Experimental Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e52');">
+            <td>
+               <span class="priority-1">LG</span>
+            </td>
+            <td>Changes to logger could be lost in org.openaudible.AudibleCLI.init()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e52" style="display: none;">
+                  <a href="#LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE">Bug type LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE (click for details)</a>
+                  <br/>In class org.openaudible.AudibleCLI<br/>In method org.openaudible.AudibleCLI.init()<br/>Return value of java.util.logging.Logger.getLogger(String) of type java.util.logging.Logger<br/>At AudibleCLI.java:[line 50]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e83');">
+            <td>
+               <span class="priority-1">LG</span>
+            </td>
+            <td>Changes to logger could be lost in new org.openaudible.audible.AudibleClient()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e83" style="display: none;">
+                  <a href="#LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE">Bug type LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE (click for details)</a>
+                  <br/>In class org.openaudible.audible.AudibleClient<br/>In method new org.openaudible.audible.AudibleClient()<br/>Return value of java.util.logging.Logger.getLogger(String) of type java.util.logging.Logger<br/>At AudibleClient.java:[line 61]<br/>Another occurrence at AudibleClient.java:[line 62]<br/>Another occurrence at AudibleClient.java:[line 63]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MT_CORRECTNESS">Multithreaded correctness Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e281');">
+            <td>
+               <span class="priority-2">LI</span>
+            </td>
+            <td>Incorrect lazy initialization and update of static field org.openaudible.desktop.swt.manager.views.Preferences.instance in org.openaudible.desktop.swt.manager.views.Preferences.show(Shell)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e281" style="display: none;">
+                  <a href="#LI_LAZY_INIT_UPDATE_STATIC">Bug type LI_LAZY_INIT_UPDATE_STATIC (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.manager.views.Preferences<br/>In method org.openaudible.desktop.swt.manager.views.Preferences.show(Shell)<br/>On field org.openaudible.desktop.swt.manager.views.Preferences.instance<br/>At Preferences.java:[lines 46-52]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e227');">
+            <td>
+               <span class="priority-2">NN</span>
+            </td>
+            <td>Naked notify in org.openaudible.desktop.swt.gui.SWTAsync.run()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e227" style="display: none;">
+                  <a href="#NN_NAKED_NOTIFY">Bug type NN_NAKED_NOTIFY (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.gui.SWTAsync<br/>In method org.openaudible.desktop.swt.gui.SWTAsync.run()<br/>At SWTAsync.java:[line 214]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e118');">
+            <td>
+               <span class="priority-2">STCAL</span>
+            </td>
+            <td>Call to method of static java.text.DateFormat in org.openaudible.books.Book.getReleaseDateSortable()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e118" style="display: none;">
+                  <a href="#STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE">Bug type STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE (click for details)</a>
+                  <br/>In class org.openaudible.books.Book<br/>In method org.openaudible.books.Book.getReleaseDateSortable()<br/>Called method java.text.SimpleDateFormat.format(Date)<br/>Field org.openaudible.books.Book.dispalyFormat<br/>At Book.java:[line 312]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e137');">
+            <td>
+               <span class="priority-2">STCAL</span>
+            </td>
+            <td>Call to method of static java.text.DateFormat in org.openaudible.books.Book.getReleaseDateSortable()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e137" style="display: none;">
+                  <a href="#STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE">Bug type STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE (click for details)</a>
+                  <br/>In class org.openaudible.books.Book<br/>In method org.openaudible.books.Book.getReleaseDateSortable()<br/>Called method java.text.SimpleDateFormat.parse(String)<br/>Field org.openaudible.books.Book.audibleDateFormat<br/>At Book.java:[line 311]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e156');">
+            <td>
+               <span class="priority-2">STCAL</span>
+            </td>
+            <td>Call to method of static java.text.DateFormat in org.openaudible.books.Book.setPurchaseDate(Date)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e156" style="display: none;">
+                  <a href="#STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE">Bug type STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE (click for details)</a>
+                  <br/>In class org.openaudible.books.Book<br/>In method org.openaudible.books.Book.setPurchaseDate(Date)<br/>Called method java.text.SimpleDateFormat.format(Date)<br/>Field org.openaudible.books.Book.dispalyFormat<br/>At Book.java:[line 292]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e400');">
+            <td>
+               <span class="priority-2">VO</span>
+            </td>
+            <td>Increment of volatile field org.openaudible.util.InputStreamReporter.lines in org.openaudible.util.InputStreamReporter.run()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e400" style="display: none;">
+                  <a href="#VO_VOLATILE_INCREMENT">Bug type VO_VOLATILE_INCREMENT (click for details)</a>
+                  <br/>In class org.openaudible.util.InputStreamReporter<br/>In method org.openaudible.util.InputStreamReporter.run()<br/>Field org.openaudible.util.InputStreamReporter.lines<br/>At InputStreamReporter.java:[line 49]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.Audible.getFileSet(Directories) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.Audible<br/>In method org.openaudible.Audible.getFileSet(Directories)<br/>Value loaded from ?<br/>Dereferenced at Audible.java:[line 305]<br/>Known null at Audible.java:[line 305]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e67');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.Directories.cleanTempDir() due to return value of called method</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e67" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.Directories<br/>In method org.openaudible.Directories.cleanTempDir()<br/>Value loaded from ?<br/>Dereferenced at Directories.java:[line 160]<br/>Known null at Directories.java:[line 160]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e211');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.convert.LookupKey.lookupKey(String) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e211" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.convert.LookupKey<br/>In method org.openaudible.convert.LookupKey.lookupKey(String)<br/>Value loaded from ?<br/>Dereferenced at LookupKey.java:[line 109]<br/>Known null at LookupKey.java:[line 109]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e312');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.desktop.swt.util.shop.BuildInstaller.build() due to return value of called method</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e312" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.util.shop.BuildInstaller<br/>In method org.openaudible.desktop.swt.util.shop.BuildInstaller.build()<br/>Value loaded from ?<br/>Dereferenced at BuildInstaller.java:[line 31]<br/>Known null at BuildInstaller.java:[line 31]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e328');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.desktop.swt.util.shop.BuildInstaller.build() due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e328" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.util.shop.BuildInstaller<br/>In method org.openaudible.desktop.swt.util.shop.BuildInstaller.build()<br/>Local variable stored in JVM register ?<br/>Dereferenced at BuildInstaller.java:[line 36]<br/>Known null at BuildInstaller.java:[line 36]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e345');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.desktop.swt.util.shop.BuildInstaller.build() due to return value of called method</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e345" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.util.shop.BuildInstaller<br/>In method org.openaudible.desktop.swt.util.shop.BuildInstaller.build()<br/>Local variable stored in JVM register ?<br/>Dereferenced at BuildInstaller.java:[line 58]<br/>Known null at BuildInstaller.java:[line 58]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e384');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in org.openaudible.feeds.pagebuilder.ResourceList.getResourcesFromDirectory(File, Pattern) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e384" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class org.openaudible.feeds.pagebuilder.ResourceList<br/>In method org.openaudible.feeds.pagebuilder.ResourceList.getResourcesFromDirectory(File, Pattern)<br/>Value loaded from fileList<br/>Dereferenced at ResourceList.java:[line 80]<br/>Known null at ResourceList.java:[line 79]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e102');">
+            <td>
+               <span class="priority-1">UC</span>
+            </td>
+            <td>Useless condition: it's known that end != -1 at this point</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e102" style="display: none;">
+                  <a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+                  <br/>In class org.openaudible.audible.BookPageParser<br/>In method org.openaudible.audible.BookPageParser.getCDATATags(String)<br/>Value end != -1<br/>Unreachable code at BookPageParser.java:[line 32]<br/>At BookPageParser.java:[line 32]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e265');">
+            <td>
+               <span class="priority-1">UC</span>
+            </td>
+            <td>Useless condition: it's known that this.useToolbar == true at this point</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e265" style="display: none;">
+                  <a href="#UC_USELESS_CONDITION">Bug type UC_USELESS_CONDITION (click for details)</a>
+                  <br/>In class org.openaudible.desktop.swt.manager.views.MainWindow<br/>In method org.openaudible.desktop.swt.manager.views.MainWindow.createTop(Composite)<br/>Value this.useToolbar == true<br/>Unreachable code at MainWindow.java:[line 42]<br/>At MainWindow.java:[line 42]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="HE_EQUALS_USE_HASHCODE">HE_EQUALS_USE_HASHCODE: Class defines equals() and uses Object.hashCode()</a>
+      </h2>
+
+  <p> This class overrides <code>equals(Object)</code>, but does not
+  override <code>hashCode()</code>, and inherits the implementation of
+  <code>hashCode()</code> from <code>java.lang.Object</code> (which returns
+  the identity hash code, an arbitrary value assigned to the object
+  by the VM).&nbsp; Therefore, the class is very likely to violate the
+  invariant that equal objects must have equal hashcodes.</p>
+
+<p>If you don't think instances of this class will ever be inserted into a HashMap/HashTable,
+the recommended <code>hashCode</code> implementation to use is:</p>
+<pre><code>public int hashCode() {
+    assert false : "hashCode not designed";
+    return 42; // any arbitrary constant will do
+}
+</code></pre>
+
+    <h2>
+         <a name="IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN">IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN: A parameter is dead upon entry to a method but overwritten</a>
+      </h2>
+
+<p>
+The initial value of this parameter is ignored, and the parameter
+is overwritten here. This often indicates a mistaken belief that
+the write to the parameter will be conveyed back to
+the caller.
+</p>
+
+    <h2>
+         <a name="LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE">LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE: Potential lost logger changes due to weak reference in OpenJDK</a>
+      </h2>
+          
+<p>OpenJDK introduces a potential incompatibility.
+ In particular, the java.util.logging.Logger behavior has
+  changed. Instead of using strong references, it now uses weak references
+  internally. That's a reasonable change, but unfortunately some code relies on
+  the old behavior - when changing logger configuration, it simply drops the
+  logger reference. That means that the garbage collector is free to reclaim
+  that memory, which means that the logger configuration is lost. For example,
+consider:
+</p>
+<pre><code>public static void initLogging() throws Exception {
+    Logger logger = Logger.getLogger("edu.umd.cs");
+    logger.addHandler(new FileHandler()); // call to change logger configuration
+    logger.setUseParentHandlers(false); // another call to change logger configuration
+}
+</code></pre>
+<p>The logger reference is lost at the end of the method (it doesn't
+escape the method), so if you have a garbage collection cycle just
+after the call to initLogging, the logger configuration is lost
+(because Logger only keeps weak references).</p>
+<pre><code>public static void main(String[] args) throws Exception {
+    initLogging(); // adds a file handler to the logger
+    System.gc(); // logger configuration lost
+    Logger.getLogger("edu.umd.cs").info("Some message"); // this isn't logged to the file as expected
+}
+</code></pre>
+<p><em>Ulf Ochsenfahrt and Eric Fellheimer</em></p>
+          
+      <h2>
+         <a name="LI_LAZY_INIT_UPDATE_STATIC">LI_LAZY_INIT_UPDATE_STATIC: Incorrect lazy initialization and update of static field</a>
+      </h2>
+
+<p> This method contains an unsynchronized lazy initialization of a static field.
+After the field is set, the object stored into that location is further updated or accessed.
+The setting of the field is visible to other threads as soon as it is set. If the
+further accesses in the method that set the field serve to initialize the object, then
+you have a <em>very serious</em> multithreading bug, unless something else prevents
+any other thread from accessing the stored object until it is fully initialized.
+</p>
+<p>Even if you feel confident that the method is never called by multiple
+threads, it might be better to not set the static field until the value
+you are setting it to is fully populated/initialized.</p>
+
+    <h2>
+         <a name="NN_NAKED_NOTIFY">NN_NAKED_NOTIFY: Naked notify</a>
+      </h2>
+
+  <p> A call to <code>notify()</code> or <code>notifyAll()</code>
+  was made without any (apparent) accompanying
+  modification to mutable object state.&nbsp; In general, calling a notify
+  method on a monitor is done because some condition another thread is
+  waiting for has become true.&nbsp; However, for the condition to be meaningful,
+  it must involve a heap object that is visible to both threads.</p>
+
+  <p> This bug does not necessarily indicate an error, since the change to
+  mutable object state may have taken place in a method which then called
+  the method containing the notification.</p>
+
+    <h2>
+         <a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+      </h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   <h2>
+         <a name="NP_NULL_ON_SOME_PATH_EXCEPTION">NP_NULL_ON_SOME_PATH_EXCEPTION: Possible null pointer dereference in method on exception path</a>
+      </h2>
+
+<p> A reference value which is null on some exception control path is
+dereferenced here.&nbsp; This may lead to a <code>NullPointerException</code>
+when the code is executed.&nbsp;
+Note that because SpotBugs currently does not prune infeasible exception paths,
+this may be a false warning.</p>
+
+<p> Also note that SpotBugs considers the default case of a switch statement to
+be an exception path, since the default case is often infeasible.</p>
+
+    <h2>
+         <a name="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE: Nullcheck of value previously dereferenced</a>
+      </h2>
+
+<p> A value is checked here to see whether it is null, but this value cannot
+be null because it was previously dereferenced and if it were null a null pointer
+exception would have occurred at the earlier dereference.
+Essentially, this code and the previous dereference
+disagree as to whether this value is allowed to be null. Either the check is redundant
+or the previous dereference is erroneous.</p>
+
+    <h2>
+         <a name="SIO_SUPERFLUOUS_INSTANCEOF">SIO_SUPERFLUOUS_INSTANCEOF: Unnecessary type check done using instanceof operator</a>
+      </h2>
+
+<p> Type check performed using the instanceof operator where it can be statically determined whether the object
+is of the type requested. </p>
+
+    <h2>
+         <a name="STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE">STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE: Call to static DateFormat</a>
+      </h2>
+
+<p>As the JavaDoc states, DateFormats are inherently unsafe for multithreaded use.
+The detector has found a call to an instance of DateFormat that has been obtained via a static
+field. This looks suspicious.</p>
+<p>For more information on this see <a href="http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6231579">JDK Bug #6231579</a>
+and <a href="http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6178997">JDK Bug #6178997</a>.</p>
+
+<h2>
+         <a name="UC_USELESS_CONDITION">UC_USELESS_CONDITION: Condition has no effect</a>
+      </h2>
+
+<p>This condition always produces the same result as the value of the involved variable that was narrowed before.
+Probably something else was meant or the condition can be removed.</p>
+
+    <h2>
+         <a name="DMI_INVOKING_TOSTRING_ON_ARRAY">DMI_INVOKING_TOSTRING_ON_ARRAY: Invocation of toString on an array</a>
+      </h2>
+
+<p>
+The code invokes toString on an array, which will generate a fairly useless result
+such as [C@16f0472. Consider using Arrays.toString to convert the array into a readable
+String that gives the contents of the array. See Programming Puzzlers, chapter 3, puzzle 12.
+</p>
+
+    <h2>
+         <a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
+      </h2>
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    <h2>
+         <a name="VO_VOLATILE_INCREMENT">VO_VOLATILE_INCREMENT: An increment to a volatile field isn't atomic</a>
+      </h2>
+
+<p>This code increments/decrements a volatile field. Increments/Decrements of volatile fields aren't
+atomic. If more than one thread is incrementing/decrementing the field at the same time,
+increments/decrements could be lost.
+</p>
+
+    </body>
+</html>
