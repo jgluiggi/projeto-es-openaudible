@@ -917,10 +917,7 @@ public class Audible implements IQueueListener<Book> {
 			File dest = getAAXFileDest(book);
 			if (dest.exists())
 				throw new IOException("Book already exists:" + dest.getAbsolutePath());
-			if (task != null)
-				CopyWithProgress.copyWithProgress(task, aaxFile, dest);
-			else
-				IO.copy(aaxFile, dest);
+            CopyWithProgress.copyWithProgress(task, aaxFile, dest);
 			updateFileCache();
 			boolean test = hasAAX(book);
 			assert (test);
