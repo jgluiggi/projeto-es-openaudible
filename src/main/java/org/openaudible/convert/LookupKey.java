@@ -106,6 +106,7 @@ public enum LookupKey {
 		args.add(getExecutable());
 		// I don't know wjh
 		if (!Platform.isWindows()) {
+            assert(tablesDir != null);
 			for (File f : tablesDir.listFiles())
 				if (f.getName().contains(".rt"))
 					args.add(f.getAbsolutePath());
