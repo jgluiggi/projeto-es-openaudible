@@ -76,10 +76,6 @@ public class StreamGobbler extends Thread {
 		}
 	}
 	
-	public IOException getException() {
-		return exception;
-	}
-	
 	public void waitFor() throws IOException {
 		while (!done) {
 			synchronized (waiter) {
