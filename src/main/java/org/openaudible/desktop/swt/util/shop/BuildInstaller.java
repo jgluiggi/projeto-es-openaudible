@@ -28,11 +28,13 @@ public class BuildInstaller {
 			throw new Exception("Expected dir:" + d.getAbsolutePath());
 		
 		boolean ok;
+        assert(installDir != null);
 		for (File f : installDir.listFiles()) {
 			ok = f.delete();
 			if (!ok) throw new Exception("Unable to delete installer file: " + f.getAbsolutePath());
 		}
 		
+        assert(installDir != null);
 		if (installDir.list().length != 0) {
 			throw new Exception("expected empty dir:" + installDir.list());
 			
@@ -55,6 +57,7 @@ public class BuildInstaller {
 		if (false)
 			System.out.println(r.getOutputString());
 		System.err.println(r.getErrorString());
+        assert(installDir != null);
 		if (installDir.list().length == 0)
 			throw new Exception("Expected installers:");
 		
